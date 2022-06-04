@@ -49,13 +49,15 @@ def FindingPriceLoop():
             print("BUY BUY BUY BUY")
             sound='bombs.mp3'
             playsound(sound)  
-
+    except:
+        print("y not valid")        
+    try:
         if x <= eprice:
             print("BUY BUY BUY BUY")
             sound='bombs.mp3'
             playsound(sound)  
     except:
-        print("y or x not valid")
+        print("x not valid")
     root.after(500,FindingPriceLoop)     
         
  
@@ -81,15 +83,19 @@ ethsellbut.place(relx=0.9,rely=0.25,relwidth=0.1,relheight=0.25)
 Eentry = Entry(eth_frame,bg="#64BBD3",font=('losta masta',25),bd=2,relief=GROOVE)
 Eentry.place(relx=0.5,relheight=0.5,relwidth=0.4)
 
-EwantedBuyprice = Label(eth_frame,bg="#64BBD3",font=('losta masta',18),bd=4,relief=GROOVE)
+EwantedBuyprice = Label(eth_frame,bg="#64BBD3",font=('losta masta',18),bd=4,relief=GROOVE,text="alarm to BUY is $")
 EwantedBuyprice.place(rely=0.5,relx=0.5,relheight=0.25,relwidth=0.5)
 
-EwantedSellprice = Label(eth_frame,bg="#64BBD3",font=('losta masta',18),bd=4,relief=GROOVE)
+EwantedSellprice = Label(eth_frame,bg="#64BBD3",font=('losta masta',18),bd=4,relief=GROOVE,text="alarm to SELL is $")
 EwantedSellprice.place(rely=0.75,relx=0.5,relheight=0.25,relwidth=0.5)
 #----------------------------------------------------------------------------------------------------------------    
 
 
 
 
-FindingPriceLoop()
-root.mainloop()
+
+
+
+if __name__ == "__main__":
+    FindingPriceLoop()
+    root.mainloop()
